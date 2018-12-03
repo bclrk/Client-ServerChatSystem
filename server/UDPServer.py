@@ -108,7 +108,7 @@ def fileoption(clientAddress):
         if client == clientAddress:     # don't send file to owner
             continue
         # attach destination address to message and send packet
-        message="<"+clientAddress[0]+":"+str(clientAddress[1])+"> wants to send you a file. Would you like to accept? [y:n] "
+        message="<"+clientAddress[0]+":"+str(clientAddress[1])+"> wants to send you a file. Press 'y' to except."
         if not sendmsg(message, client[0], client[1]):
             # if failed to send
             toremove = client   # we will remove client from chat group

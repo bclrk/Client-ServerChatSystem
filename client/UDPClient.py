@@ -109,7 +109,7 @@ clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 clientSocket.settimeout(TIMEOUTTIME)      # set timeout time
 
-print('Enter message to begin chatting. Use "transferfile <filename>" to trasfer a file\n')
+print('Enter message to begin chatting. Use "transferfile <filename>" to transfer a file\n')
 
 while True:
     inputs = [sys.stdin, clientSocket]  # maintains a list of possible inputs
