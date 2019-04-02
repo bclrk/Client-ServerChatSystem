@@ -1,6 +1,5 @@
-
 """
-    UDPServer.py creates a UDP socket that listens for UDP mesages to be send.
+    UDP_server.py creates a UDP socket that listens for UDP mesages to be send.
     First the client sends a request to connect (WRQ, opcode 2) and the server will
     respond with an inital ACK (opcode 4). The client then send a single DATA
     packets (opcode 3) and waits for an ACK from the server before sending the next
@@ -108,7 +107,7 @@ def fileoption(clientAddress):
         if client == clientAddress:     # don't send file to owner
             continue
         # attach destination address to message and send packet
-        message="<"+clientAddress[0]+":"+str(clientAddress[1])+"> wants to send you a file. Press 'y' to except."
+        message="<"+clientAddress[0]+":"+str(clientAddress[1])+"> wants to send you a file. Would you like to accept? [y:n] "
         if not sendmsg(message, client[0], client[1]):
             # if failed to send
             toremove = client   # we will remove client from chat group
